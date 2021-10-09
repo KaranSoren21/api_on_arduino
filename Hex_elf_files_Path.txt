@@ -1,9 +1,0 @@
-1.Master Board
-..\Hex_elf_files\StandardFirmataPlus.ino.hex
-StandardFirmataPlus.ino.hex
-
-2.Slave Board 1
-..\Hex_elf_files\slave_1\slave_board_1\slave_board_1.ino.hex
-
-3.Slave Board 2
-..\Hex_elf_files\slave_2\keypad2\keypad2.ino.hex
