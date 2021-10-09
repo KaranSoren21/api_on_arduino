@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e80947895c.js" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- Toggle switch css -->
+    <link href="toggle-switch.css" rel="stylesheet">
+    <title>Arduino Control</title>
+</head>
+<body>
+ 
+  
+    <div class="container px-5 mb-5">
+        <h1 class="text-center my-4">Web-Control for LEDs, Fan and Door System</h1>
+
+        <div class="row">
+            <div class="col-8">
+                <div class="card mb-3">
+                    <h4 class="card-header"><i class='fas fa-cog fa-pulse fa-spin fa-1x'></i>&nbsp;&nbsp;Door Lock System</h4>
+                    <div class="card-body">
+                        <h5 class="card-title">Door Switch</h5>
+                        <label class="switch"><input type="checkbox" class="servo-toggle"><span class="slider round"></span></label>
+                    </div>
+                </div>
+
+                <div class="card mb-3">
+                    <h4 class="card-header"><i class='fas fa-cog fa-spin fa-1x'></i>&nbsp;&nbsp;FAN</h4>
+                    <div class="card-body">
+                        <h5 class="card-title">Fan</h5>
+                        <label class="switch"><input type="checkbox" class="fan-toggle5"><span class="slider round"></span></label>
+                    </div>                    
+                </div>
+                
+                <div class="card mb-3">
+                  <h4 class="card-header"><i class='fas fa-cog fa-spin fa-1x'></i>&nbsp;&nbsp;Message Box</h4>
+                  <div class="card-body">
+                      <h5 class="card-title">Send Message</h5>
+                      <input class="form-control form-control-lg client-msg" type="text" placeholder="Enter message here" aria-label=".form-control-lg example">
+                      <button type="button" class="btn btn-lg btn-outline-success send-btn">Send</button>                      
+                  </div>                    
+                </div>
+
+                <div class="card mb-3">
+                  <h4 class="card-header"><i class='fas fa-cog fa-spin fa-1x'></i>&nbsp;&nbsp;Locker/Vault</h4>
+                  <div class="card-body">
+                      <h5 class="card-title">Locker Button</h5>
+                      <!--<input class="form-control form-control-lg client-msg1" type="text" placeholder="Enter message here" aria-label=".form-control-lg example">-->
+                      <button type="button" class="btn btn-lg btn-outline-success send-btn1">Turn OFF</button>                                            
+                    </div>                    
+                </div>
+
+                <div class="card">
+                    <h4 class="card-header"><i class="far fa-lightbulb"></i>&nbsp;&nbsp;LED</h4>
+                    <div class="card-body">
+                        <h5 class="card-title">Green Led</h5>
+                        <label class="switch"><input type="checkbox" class="led-toggle"><span class="slider round"></span></label>
+                    </div>
+
+                  <div class="card-body">
+                      <h5 class="card-title">Red Led</h5>
+                      <label class="switch"><input type="checkbox" class="led-toggle2"><span class="slider round"></span></label>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Yellow Led</h5>
+                        <label class="switch"><input type="checkbox" class="led-toggle3"><span class="slider round"></span></label>
+                    </div>
+
+                    <div class="card-body">
+                        <h5 class="card-title">Blue Led</h5>
+                        <label class="switch"><input type="checkbox" class="led-toggle4"><span class="slider round"></span></label>
+                    </div>
+                </div>
+            </div>
+
+            <!--Monitor_code started-->
+                <div class="col-4">
+                    <div class="card text-white bg-dark mb-3">
+                        <h4 class="card-header text-success">Monitor</h4>
+                        <div class="card-body">
+                        <p class="card-text" id="monitor" style="color: #45FF00;"></p>
+                        <label>Connection is: </label>
+                        <input type="text" id="connection_status" style="border: 0;background-color: #010911;color: #eb7311" value="Not connected" ><br>
+                        <label>Connection Id:</label>
+                        <input type="text" id="connection_status1" size = "22" style="border: 0;background-color: #010911;color: #eb7311" value="NULL" ><br> <br>
+                        <div>
+                        <label>Green Led Status: </label>
+                        <input type="text" id="connection_status2" size = "22" style="border: 0;background-color: #010911;color: #eb7311" value="No status avail" ><br>
+                        </div>
+                        <label>Red Led Status:   </label>
+                        <input type="text" id="connection_status3" size = "22" style="border: 0;background-color: #010911;color: #eb7311" value="No status avail" ><br>
+                        <label>Yellow Led Status: </label>
+                        <input type="text" id="connection_status4" size = "22" style="border: 0;background-color: #010911;color: #eb7311" value="No status avail" ><br>
+                        <label>blue Led Status: </label>
+                        <input type="text" id="connection_status5" size = "22" style="border: 0;background-color: #010911;color: #eb7311" value="No status avail" ><br>
+                        <label>Fan Status </label> <br>
+                        <input type="text" id="connection_status6" size = "22" style="border: 0;background-color: #010911;color: #eb7311" value="No status avail" ><br>
+                        <label>Door Status </label><br>
+                        <input type="text" id="connection_status7" size = "22" style="border: 0;background-color: #010911;color: #eb7311" value="No status avail" ><br>
+                        <label>Temperature status: </label>
+                        <input type="text" id="termometer" size = "22" style="border: 0;background-color: #010911;color: #eb7311" value="No status avail" ><br>
+                        <label>Hygrometer status: </label>
+                        <input type="text" id="hygrometer" size = "22" style="border: 0;background-color: #010911;color: #eb7311" value="No status avail" ><br>
+                      </div>
+                </div>
+            <!--Monitor_code ended-->  
+                
+            </div>
+        </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- Socket.io JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.3/socket.io.min.js" integrity="sha512-aC5ZfKOuGRUiJCv+E/EIWsj49E02BQpuLQbixZe+16Lm1R6AepHZA1xvY92XBQNNbwQoqG4DXCGxwoxBFb5Q1A==" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>   
+        //socket connection initialization
+        const socket = io();
+          socket.on("connect", () => {
+            console.log("socket connection created id:"+socket.id);
+          });
+
+            //send button function
+          $(".send-btn").on("click", function(){
+            //fetch the msg
+            var msg=$(".client-msg").val().trim();
+            //sending msg to server
+            socket.emit("client-msg", msg);
+          });
+
+          $(".send-btn1").on("click", function(){
+            //fetch the msg
+            //var msg=$(".client-msg1").val().trim();
+            //sending msg to server
+            var msg = "LOW";
+            socket.emit("client-msg1", msg);
+          });
+
+          //update green toggle status
+          socket.on("led-state", function(payload){
+            console.log("green led state:"+payload);
+            if(payload)
+              $(".led-toggle").prop("checked", true);
+            else $(".led-toggle").prop("checked", false);
+          });
+
+          //update red toggle status
+          socket.on("led-state2", function(payload){
+            console.log("red led state:"+payload);
+            if(payload)
+              $(".led-toggle2").prop("checked", true);
+            else $(".led-toggle2").prop("checked", false);
+          });
+
+          //update yellow toggle status
+          socket.on("led-state3", function(payload){
+            console.log("yellow led state:"+payload);
+            if(payload)
+              $(".led-toggle3").prop("checked", true);
+            else $(".led-toggle3").prop("checked", false);
+          });
+
+          //update blue toggle status
+          socket.on("led-state4", function(payload){
+            console.log("blue led state:"+payload);
+            if(payload)
+              $(".led-toggle4").prop("checked", true);
+            else $(".led-toggle4").prop("checked", false);
+          });
+
+          //update fan toggle status
+          socket.on("fan-state", function(payload){
+            console.log("Fan state:"+payload);
+            if(payload)
+              $(".fan-toggle5").prop("checked", true);
+            else $(".fan-toggle5").prop("checked", false);
+          });
+
+          //servo toggle status
+          socket.on("servo--state", function(payload){
+            console.log("door state:"+payload);
+            if(payload === 2400)
+              var state = true;
+            else
+              var state = false;
+            if(state)
+              $(".servo-toggle").prop("checked", true);
+            else $(".servo-toggle").prop("checked", false);
+          });
+
+          //green led toggle function
+          $(".led-toggle").on("click", function(){
+             var state=$(".led-toggle").prop("checked");
+             socket.emit("led-toggle", state);
+          });
+          
+          //red led toggle function
+          $(".led-toggle2").on("click", function(){
+            var state=$(".led-toggle2").prop("checked");
+            socket.emit("led-toggle2", state);
+          });
+          
+          //yellow led toggle function
+          $(".led-toggle3").on("click", function(){
+            var state=$(".led-toggle3").prop("checked");
+            socket.emit("led-toggle3", state);
+          });
+
+          //blue led toggle function
+          $(".led-toggle4").on("click", function(){
+            var state=$(".led-toggle4").prop("checked");
+            socket.emit("led-toggle4", state);
+          });
+          
+          //fan toggle function
+          $(".fan-toggle5").on("click", function(){
+            var state=$(".fan-toggle5").prop("checked");
+            socket.emit("fan-toggle5", state);
+          });
+          
+          //servo toggle function
+          $(".servo-toggle").on("click", function(){
+            var state=$(".servo-toggle").prop("checked");
+            socket.emit("servo-toggle", state);
+          });
+          
+
+
+            //receiving connection state from server side in monitor display.
+            socket.on('c_msg', function(c_msg){
+                $("#connection_status").val(c_msg);
+            });
+            socket.on('reconnecting', () => {
+                $("#connection_status").val("Reconnectting....");
+            });
+            socket.on('disconnect', () => {
+                $("#connection_status").val("Disconnected.");
+            });
+            
+            //receiving connection id from server side in monitor display.
+            socket.on('con_id', function(con_id){
+              $("#connection_status1").val(con_id);
+            });
+            socket.on('reconnecting', () => {
+              $("#connection_status1").val("Reconnectting....");
+            });
+            socket.on('disconnect', () => {
+              $("#connection_status1").val("NULL");
+            });
+
+          //updating temperature state from server side in monitor display.
+          socket.on('temperature', function(temperature) {
+            $("#termometer").val(temperature + "°C");    
+          });    
+          socket.on('reconnecting', () => {
+            $("#termometer").val("Reconnectting....");
+          });         
+          socket.on('disconnect', () => {
+            $("#termometer").val("NULL");
+          });
+          
+          //updating temperature state from server side in monitor display.
+          socket.on('hygrometer', function(hygro) {
+            $("#hygrometer").val(hygro + "%");    
+          });    
+          socket.on('reconnecting', () => {
+            $("#hygrometer").val("Reconnectting....");
+          });         
+          socket.on('disconnect', () => {
+            $("#hygrometer").val("NULL");
+          });
+
+          //updating green led state from server side in monitor display
+          socket.on('led-state', function(led_toggle){
+          if(led_toggle === 1)
+            $("#connection_status2").val("ON");
+          else if(led_toggle === 0)
+            $("#connection_status2").val("OFF");
+          });
+          socket.on('reconnecting', () => {
+            $("#connection_status2").val("Reconnectting....");
+          });
+          socket.on('disconnect', () => {
+            $("#connection_status2").val("NULL");
+          });
+
+          //updating yellow led state from server side in monitor display.
+          socket.on('led-state2', function(led_toggle2){
+            if(led_toggle2 === 1)
+            $("#connection_status3").val("ON");
+          else if(led_toggle2 === 0)
+            $("#connection_status3").val("OFF");
+          });
+          socket.on('reconnecting', () => {
+            $("#connection_status3").val("Reconnectting....");
+          });
+          socket.on('disconnect', () => {
+            $("#connection_status3").val("NULL");
+          });
+
+          //updating red led state from server side in monitor display.
+          socket.on('led-state3', function(led_toggle3){
+            if(led_toggle3 === 1)
+              $("#connection_status4").val("ON");
+           else if(led_toggle3 === 0)
+              $("#connection_status4").val("OFF");            
+            });
+            socket.on('reconnecting', () => {
+                $("#connection_status4").val("Reconnectting....");
+            });
+              socket.on('disconnect', () => {
+                $("#connection_status4").val("NULL");
+           });
+
+          //updating blue led state from server side in monitor display.
+          socket.on('led-state4', function(led_toggle4){
+          if(led_toggle4 === 1)
+              $("#connection_status5").val("ON");
+          else if(led_toggle4 === 0)
+               $("#connection_status5").val("OFF");           
+          });
+          socket.on('reconnecting', () => {
+                $("#connection_status5").val("Reconnectting....");
+          });
+          socket.on('disconnect', () => {
+                $("#connection_status5").val("NULL");
+          });
+          
+          //Updating fan status from server side in monitor display
+          socket.on('fan-state', function(led_toggle4){
+          if(led_toggle4 == 0)
+            $("#connection_status6").val("OFF");
+          else
+            $("#connection_status6").val("ON");          
+          });
+          socket.on('reconnecting', () => {
+                $("#connection_status6").val("Reconnectting....");
+          });
+          socket.on('disconnect', () => {
+                $("#connection_status6").val("NULL");
+          });
+          //updating servo state from server side in monitor display.
+          socket.on('servo--state', function(servo){
+          if(servo == 1500)
+            $("#connection_status7").val("OFF");
+          else if(servo == 2400)
+            $("#connection_status7").val("ON");           
+          });
+          socket.on('reconnecting', () => {
+            $("#connection_status7").val("Reconnectting....");
+          });
+          socket.on('disconnect', () => {
+            $("#connection_status").val("NULL");
+          });
+
+    </script>
+</body>
+</html>
