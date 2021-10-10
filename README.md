@@ -20,3 +20,5 @@ This project, designed to teach students or any user on the Johnny-Five library.
 
 **Command to stop a running project**
 * ctrl+c or .exit
+# Output of this project 
+![Animation1](https://user-images.githubusercontent.com/70742988/136711061-5dc1eaae-5244-415a-b19c-67d0256d98f0.gif)
