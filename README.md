@@ -3,6 +3,7 @@ This project, designed to teach students or any user on the Johnny-Five library.
 # Setup to run this repository 
 * This project runs on Windows only.
 * [Proteus Design Suite](https://www.labcenter.com/downloads/)
+* [com0com](https://sourceforge.net/projects/com0com/files/latest/download)
 * [Node js](https://nodejs.org/en/)
 * [Visual C++ Build Environment](https://visualstudio.microsoft.com/vs/community/)<br>
 
