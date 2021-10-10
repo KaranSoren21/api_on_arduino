@@ -14,3 +14,9 @@ This project, designed to teach students or any user on the Johnny-Five library.
 * npm install [johnny-five](https://github.com/rwaldron/johnny-five/wiki/Getting-started-with-Johnny-Five-and-Proteus) 
 * npm install [socket.io](https://github.com/socketio/socket.io)
 * npm install [express](https://github.com/expressjs/express) 
+
+**Command to run this project**
+* node *file_name.js*. For example: node server.js
+
+**Command to stop a running project**
+* ctrl+c or .exit
