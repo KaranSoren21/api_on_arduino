@@ -2,7 +2,7 @@
 This project, designed to teach students or any user on the Johnny-Five library. And how to link the provided Johnny-Five API library with Arduino and its components using a simulator. Students can access Arduino and other devices without touching them with the simulator.
 # Setup to run this repository 
 * This project runs on Windows only.
-* [Proteus Design Suite](https://www.labcenter.com/downloads/)
+* [Proteus Design Suite](https://drive.google.com/file/d/1gbbFzqiOJLbuXTZVpuAQv4Z81nWY2qWh/view?usp=sharing)
 * [com0com](https://sourceforge.net/projects/com0com/files/latest/download)
 * [Node js](https://nodejs.org/en/)
 * [Visual C++ Build Environment](https://visualstudio.microsoft.com/vs/community/)<br>
