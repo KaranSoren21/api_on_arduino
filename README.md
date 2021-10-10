@@ -9,7 +9,7 @@ This project, designed to teach students or any user on the Johnny-Five library.
 **The following commands need to run on the command prompt. Run these following commands under this project file.**
 
 * npm install -g node-gyp
-* npm config set msvs_version 2019 (depend on versions of VS community or build tools) in cmd
+* npm config set msvs_version 2019 (depend on versions of VS community or build tools)
 * npm install [johnny-five](https://github.com/rwaldron/johnny-five/wiki/Getting-started-with-Johnny-Five-and-Proteus) 
 * npm install [socket.io](https://github.com/socketio/socket.io)
 * npm install [express](https://github.com/expressjs/express) 
