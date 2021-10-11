@@ -15,10 +15,13 @@ This project, designed to teach students or any user on the Johnny-Five library.
 * npm install [socket.io](https://github.com/socketio/socket.io)
 * npm install [express](https://github.com/expressjs/express) 
 
-**Command to run this project**
+**Command to run this project on the command prompt. Run this command under this project file.**
 * node *file_name.js*. For example: node server.js
 
-**Command to stop a running project**
-* ctrl+c or .exit
+**Open any browser like [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Microsoft Edge](https://www.microsoft.com/en-us/edge) or [Internet Explorer](https://www.microsoft.com/en-us/download/details.aspx?id=41628) etc.** 
+* Type in the URL : local:8080
+
+**Command to stop a running project. Run this command under this project file**
+* ctrl+c or ctrl+d or .exit
 # Output of this project 
 ![Animation1](https://user-images.githubusercontent.com/70742988/136711061-5dc1eaae-5244-415a-b19c-67d0256d98f0.gif)
