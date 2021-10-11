@@ -18,6 +18,9 @@ This project, designed to teach students or any user on the Johnny-Five library.
 **Command to run this project on the command prompt. Run this command under this address.**
 * node *file_name.js*. For example: node server.js
 
+**Run the Simulation Software - Proteus Design Suite**
+* ..\proteus_file\main_file.pdsprj
+
 **Open any browser like [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Microsoft Edge](https://www.microsoft.com/en-us/edge) or [Internet Explorer](https://www.microsoft.com/en-us/download/details.aspx?id=41628) etc.** 
 * Type in the URL : local:8080
 
