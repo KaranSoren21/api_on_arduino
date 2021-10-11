@@ -7,7 +7,7 @@ This project, designed to teach students or any user on the Johnny-Five library.
 * [Node js](https://nodejs.org/en/)
 * [Visual C++ Build Environment](https://visualstudio.microsoft.com/vs/community/)<br>
 
-**The following commands need to run on the command prompt. Run these following commands under this project file.**
+**The following commands need to run on the command prompt. Copy the address of this project file in which this file is located into the computer system. And paste it as (For Examples) *cd C:\Users\User_name\ Documents\api_on_arduino* on the command prompt. Run these following commands under this address.**
 
 * npm install -g node-gyp
 * npm config set msvs_version 2019 (depend on versions of VS community or build tools)
@@ -15,13 +15,13 @@ This project, designed to teach students or any user on the Johnny-Five library.
 * npm install [socket.io](https://github.com/socketio/socket.io)
 * npm install [express](https://github.com/expressjs/express) 
 
-**Command to run this project on the command prompt. Run this command under this project file.**
+**Command to run this project on the command prompt. Run this command under this address.**
 * node *file_name.js*. For example: node server.js
 
 **Open any browser like [Google Chrome](https://www.google.com/intl/en_in/chrome/) or [Microsoft Edge](https://www.microsoft.com/en-us/edge) or [Internet Explorer](https://www.microsoft.com/en-us/download/details.aspx?id=41628) etc.** 
 * Type in the URL : local:8080
 
-**Command to stop a running project. Run this command under this project file**
+**Command to stop a running project. Run this command under this address**
 * ctrl+c or ctrl+d or .exit
 # Output of this project 
 ![Animation1](https://user-images.githubusercontent.com/70742988/136711061-5dc1eaae-5244-415a-b19c-67d0256d98f0.gif)
