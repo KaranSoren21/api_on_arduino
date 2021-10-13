@@ -3,7 +3,7 @@ This project, designed to teach students or any user on the Johnny-Five library.
 # Setup to run this repository 
 * This project runs on Windows only.
 * [Proteus Design Suite](https://drive.google.com/file/d/1gbbFzqiOJLbuXTZVpuAQv4Z81nWY2qWh/view?usp=sharing)
-* [com0com](https://github.com/rwaldron/johnny-five/wiki/Getting-started-with-Johnny-Five-and-Proteus#installing-and-configure-the-proteus-and-com0com-software)
+* [com0com](https://github.com/KaranSoren21/api_on_arduino/wiki/com0com-setup#com0com-1)
 * [Node js](https://nodejs.org/en/)
 * [Visual C++ Build Environment](https://visualstudio.microsoft.com/vs/community/)<br>
 
