@@ -10,7 +10,7 @@ This project, designed to teach students or any user on the Johnny-Five library.
 **The following commands need to run on the command prompt. Copy the address of this project file in which this file is located into the computer system. And paste it as (For Examples) *cd C:\Users\User_name\ Documents\api_on_arduino* on the command prompt. Run these following commands under this address.**
 
 * npm install -g node-gyp
-* npm config set msvs_version 2019 (depend on versions of VS community or build tools)
+* npm config set msvs_version 2019 (depend on versions of Visual Studio)
 * npm install [johnny-five](https://github.com/rwaldron/johnny-five/wiki/Getting-started-with-Johnny-Five-and-Proteus) 
 * npm install [socket.io](https://github.com/socketio/socket.io)
 * npm install [express](https://github.com/expressjs/express) 
