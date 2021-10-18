@@ -5,7 +5,7 @@ This project, designed to teach students or any user on the Johnny-Five library.
 * [Proteus Design Suite](https://drive.google.com/file/d/1gbbFzqiOJLbuXTZVpuAQv4Z81nWY2qWh/view?usp=sharing)
 * [com0com](https://github.com/KaranSoren21/api_on_arduino/wiki/com0com-setup#com0com-1)
 * [Node js](https://nodejs.org/en/)
-* [Visual C++ Build Environment](https://visualstudio.microsoft.com/vs/community/)<br>
+* [Visual C++ Build Environment](https://github.com/KaranSoren21/api_on_arduino/wiki/Visual-C---Build-Environment)<br>
 
 **The following commands need to run on the command prompt. Copy the address of this project file in which this file is located into the computer system. And paste it as (For Examples) *cd C:\Users\User_name\ Documents\api_on_arduino* on the command prompt. Run these following commands under this address.**
 
