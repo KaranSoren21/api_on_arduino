@@ -1,5 +1,5 @@
 # API's library for Arduino board Simulator using Javascript
-This project, designed to teach students or any user on the Johnny-Five library. And how to link the provided Johnny-Five API library with Arduino and its components using a simulator. Students can access Arduino and other devices without touching them with the simulator.
+This is my final semester project, designed to teach students or any user on the Johnny-Five library. This project shows how to link the provided Johnny-Five API library with Arduino and its components using a simulator. Students can learn to access Arduino and other devices without touching them with the simulator. Three Arduino boards are used, one as the master and the other two as slaves. A connection is established between the boards using the I2C communication protocol. List of components used with Arduino boards : Resistors of 100 ohms, Compim, three fan-DC, led of yellow, blue, green, red color and three servo motor. I have created a web interface for the Arduino board and its components. With this web interface, I can control the Arduino board and its components under the node js server.
 # Setup to run this repository 
 * This project runs on Windows only.
 * [Proteus Design Suite](https://drive.google.com/file/d/1gbbFzqiOJLbuXTZVpuAQv4Z81nWY2qWh/view?usp=sharing)
